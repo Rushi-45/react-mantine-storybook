@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react';
 import { Text } from '@mantine/core';
 import type { TextProps } from '@mantine/core';
 
 export interface LabelProps extends TextProps {
+  children?: ReactNode;
   htmlFor?: string;
   required?: boolean;
 }

@@ -1,7 +1,9 @@
+import type { InputHTMLAttributes } from 'react';
 import { Input as MantineInput } from '@mantine/core';
 import type { InputProps as MantineInputProps } from '@mantine/core';
 
-export interface InputProps extends Omit<MantineInputProps, 'size' | 'variant'> {
+export interface InputProps
+  extends Omit<MantineInputProps & InputHTMLAttributes<HTMLInputElement>, 'size' | 'variant'> {
   variant?: 'default' | 'filled' | 'unstyled';
   inputSize?: 'small' | 'medium' | 'large';
   error?: boolean;

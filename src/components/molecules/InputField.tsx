@@ -1,5 +1,5 @@
 import { TextInput, PasswordInput } from '@mantine/core';
-import type { TextInputProps } from '@mantine/core';
+import type { TextInputProps, PasswordInputProps } from '@mantine/core';
 
 export interface InputFieldProps extends Omit<TextInputProps, 'error'> {
   type?: string;
@@ -16,19 +16,28 @@ const InputField = ({
   type = 'text',
   ...props
 }: InputFieldProps) => {
-  const sharedProps = {
-    label,
-    description: helperText,
-    error: errorText,
-    required,
-    ...props,
-  };
-
   if (type === 'password') {
-    return <PasswordInput {...sharedProps} />;
+    return (
+      <PasswordInput
+        label={label}
+        description={helperText}
+        error={errorText}
+        required={required}
+        {...(props as Omit<PasswordInputProps, 'label' | 'description' | 'error' | 'required'>)}
+      />
+    );
   }
 
-  return <TextInput type={type} {...sharedProps} />;
+  return (
+    <TextInput
+      type={type}
+      label={label}
+      description={helperText}
+      error={errorText}
+      required={required}
+      {...props}
+    />
+  );
 };
 
 export default InputField;
