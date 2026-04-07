@@ -5,7 +5,7 @@ Thank you for your interest in contributing! Here's everything you need to get s
 ## Development Setup
 
 ```bash
-git clone https://github.com/your-username/react-mantine-storybook.git
+git clone https://github.com/Rushi-45/react-mantine-storybook.git
 cd react-mantine-storybook
 npm install
 npm run storybook

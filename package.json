@@ -13,6 +13,8 @@
     "typescript",
     "ui"
   ],
+  "author": "Rushi Chudasama",
+  "homepage": "https://react-mantine-storybook.netlify.app",
   "license": "MIT",
   "type": "module",
   "scripts": {

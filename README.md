@@ -2,11 +2,14 @@
 
 A production-ready React component library built with **Mantine** and **Tailwind CSS**, organized following **Atomic Design** principles and fully documented with **Storybook**.
 
-[![CI](https://github.com/your-username/react-mantine-storybook/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/react-mantine-storybook/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-react--mantine--storybook.netlify.app-brightgreen?logo=netlify)](https://react-mantine-storybook.netlify.app)
+[![CI](https://github.com/Rushi-45/react-mantine-storybook/actions/workflows/ci.yml/badge.svg)](https://github.com/Rushi-45/react-mantine-storybook/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Storybook](https://img.shields.io/badge/Storybook-10.x-ff4785?logo=storybook&logoColor=white)](https://storybook.js.org)
 [![Mantine](https://img.shields.io/badge/Mantine-9.x-339af0?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyeiIvPjwvc3ZnPg==)](https://mantine.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+
+🔗 **[View Live Storybook →](https://react-mantine-storybook.netlify.app)**
 
 ---
 
@@ -100,7 +103,7 @@ This project provides a set of reusable UI components that follow the [Atomic De
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/react-mantine-storybook.git
+git clone https://github.com/Rushi-45/react-mantine-storybook.git
 cd react-mantine-storybook
 
 # Install dependencies
@@ -225,4 +228,4 @@ npx tsc --noEmit
 
 ## License
 
-MIT © [your-username](LICENSE)
+MIT © [Rushi-45](LICENSE)
