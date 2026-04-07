@@ -2,9 +2,10 @@ import '@mantine/core/styles.css';
 import '../src/index.css';
 import { MantineProvider } from '@mantine/core';
 import type { Preview, Decorator } from '@storybook/react-vite';
+import theme from '../src/theme';
 
 const withMantine: Decorator = (Story) => (
-  <MantineProvider>
+  <MantineProvider theme={theme}>
     <Story />
   </MantineProvider>
 );
