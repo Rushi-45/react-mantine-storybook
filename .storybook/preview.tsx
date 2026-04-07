@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 import '../src/index.css';
 import { MantineProvider } from '@mantine/core';
 import type { Preview, Decorator } from '@storybook/react-vite';

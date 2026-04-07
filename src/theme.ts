@@ -1,99 +1,175 @@
-import { createTheme } from '@mantine/core';
-import type { MantineColorsTuple } from '@mantine/core';
+import {
+  Select,
+  Anchor,
+  createTheme,
+  Text,
+  Tabs,
+  Checkbox,
+  TextInput,
+  MultiSelect,
+  Modal,
+  Title,
+  Stepper,
+  NumberInput,
+  Switch,
+  SegmentedControl,
+  Button,
+  Textarea,
+  Card,
+  Tooltip,
+  Popover,
+} from '@mantine/core'
+import type { MantineTheme } from '@mantine/core'
+import { DatePickerInput } from '@mantine/dates'
+import classes from '@styles/overrides/input.module.css'
 
-/**
- * Custom brand color palette (blue-indigo tones).
- * Index 0 = lightest, 9 = darkest.
- */
-const brand: MantineColorsTuple = [
-  '#eef3ff',
-  '#dce4f5',
-  '#b9c7e2',
-  '#94a8d0',
-  '#748dc1',
-  '#5f7cb8',
-  '#4c6fb5',
-  '#3a5ca0',
-  '#2f5091',
-  '#234480',
-];
-
-const theme = createTheme({
-  /** Primary color used across all Mantine components */
-  primaryColor: 'brand',
-
-  colors: { brand },
-
-  /** Base font — falls back to system sans-serif */
-  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-  fontFamilyMonospace: '"JetBrains Mono", "Fira Code", Menlo, monospace',
-
-  headings: {
-    fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-    fontWeight: '700',
-    sizes: {
-      h1: { fontSize: '2.25rem', lineHeight: '1.2' },
-      h2: { fontSize: '1.75rem', lineHeight: '1.3' },
-      h3: { fontSize: '1.375rem', lineHeight: '1.4' },
+const commonStyles = {
+  styles: (theme: MantineTheme) => ({
+    label: {
+      color: theme.colors.gray[7],
+      fontWeight: '500',
     },
-  },
+    input: {
+      backgroundColor: 'var(--mantine-color-mclarens-0)',
+      color: 'black',
+      fontWeight: 'normal',
+      borderRadius: '2px',
+    },
+    pill: {
+      backgroundColor: 'var(--mantine-color-mclarens-7)',
+      color: 'white',
+    },
+  }),
+}
 
-  /** Default border-radius applied to all components unless overridden */
-  defaultRadius: 'md',
-
-  /** Consistent spacing scale */
-  spacing: {
-    xs: '0.5rem',
-    sm: '0.75rem',
-    md: '1rem',
-    lg: '1.5rem',
-    xl: '2rem',
-  },
-
-  /** Component-level default prop overrides */
+export const theme = createTheme({
+  defaultRadius: 0,
   components: {
-    Button: {
+    Anchor: Anchor.extend({
       defaultProps: {
-        radius: 'md',
+        c: 'mclarens.8',
       },
-    },
-    TextInput: {
+    }),
+    Button: Button.extend({
       defaultProps: {
-        radius: 'md',
+        radius: 'xs',
       },
-    },
-    PasswordInput: {
+    }),
+    Card: Card.extend({
       defaultProps: {
-        radius: 'md',
+        radius: 'xs',
       },
+    }),
+    Checkbox: Checkbox.extend({
+      styles: () => ({
+        input: {
+          '&:checked': {
+            backgroundColor: 'var(--mantine-color-mclarens-8)',
+          },
+        },
+      }),
+    }),
+    DatePickerInput: DatePickerInput.extend({
+      ...commonStyles,
+    }),
+    Input: {
+      classNames: classes,
     },
-    Select: {
+    Modal: Modal.extend({
+      defaultProps: {},
+      styles: () => ({
+        content: {
+          padding: '0 25px 25px 25px',
+        },
+        header: {
+          padding: '0 15px 0 15px',
+        },
+        title: {
+          fontWeight: 'bold',
+          fontSize: 'var(--mantine-h3-font-size)',
+          color: 'black',
+        },
+      }),
+    }),
+    MultiSelect: MultiSelect.extend({
+      ...commonStyles,
+    }),
+    NumberInput: NumberInput.extend({
+      ...commonStyles,
+    }),
+    Popover: Popover.extend({
       defaultProps: {
-        radius: 'md',
-      },
-    },
-    Card: {
-      defaultProps: {
-        radius: 'md',
-        shadow: 'sm',
-      },
-    },
-    Badge: {
-      defaultProps: {
+        withArrow: true,
         radius: 'sm',
+        arrowSize: 18,
       },
-    },
-    Paper: {
+    }),
+    Tabs: Tabs.extend({
       defaultProps: {
-        radius: 'md',
+        c: 'mclarens.9',
+        color: 'mclarens.9',
+        fw: 'bold',
       },
-    },
-    Avatar: {
+    }),
+    Text: Text.extend({
       defaultProps: {
-        color: 'brand',
+        c: 'black',
       },
-    },
+    }),
+    Textarea: Textarea.extend({
+      ...commonStyles,
+    }),
+    TextInput: TextInput.extend({
+      ...commonStyles,
+    }),
+    Title: Title.extend({
+      defaultProps: {
+        c: 'var(--mantine-color-dark-9)',
+      },
+    }),
+    Tooltip: Tooltip.extend({
+      defaultProps: {
+        bg: 'var(--mantine-color-mclarens-9)',
+        withArrow: true,
+      },
+    }),
+    SegmentedControl: SegmentedControl.extend({
+      defaultProps: {
+        color: 'mclarens',
+      },
+    }),
+    Select: Select.extend({
+      defaultProps: {
+        searchable: true,
+        autoComplete: 'none',
+      },
+      ...commonStyles,
+    }),
+    Stepper: Stepper.extend({
+      defaultProps: {
+        color: 'mclarens',
+      },
+    }),
+    Switch: Switch.extend({
+      ...commonStyles,
+    }),
   },
-});
+  primaryColor: 'mclarens',
+  primaryShade: 6,
+  colors: {
+    mclarens: [
+      '#ebf5ff',
+      '#d4e6fa',
+      '#a4cbf7',
+      '#72aff6',
+      '#0095da',
+      '#3988f5',
+      '#2f81f6',
+      '#256edc',
+      '#1a62c5',
+      '#005bbb',
+    ],
+  },
+})
 
-export default theme;
+export default theme
