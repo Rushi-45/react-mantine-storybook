@@ -7,6 +7,7 @@ export interface AlertProps extends Omit<MantineAlertProps, 'color' | 'onClose'>
   variant?: 'info' | 'success' | 'warning' | 'error';
   title?: string;
   onDismiss?: () => void;
+  closeButtonLabel?: string;
 }
 
 const colorMap = {
@@ -21,6 +22,7 @@ const Alert = ({
   variant = 'info',
   title,
   onDismiss,
+  closeButtonLabel = 'Dismiss alert',
   ...props
 }: AlertProps) => (
   <MantineAlert
@@ -29,6 +31,7 @@ const Alert = ({
     variant="light"
     withCloseButton={!!onDismiss}
     onClose={onDismiss}
+    closeButtonLabel={closeButtonLabel}
     {...props}
   >
     {children}

@@ -23,6 +23,7 @@ const InputField = ({
         description={helperText}
         error={errorText}
         required={required}
+        visibilityToggleButtonProps={{ 'aria-label': 'Toggle password visibility' }}
         {...(props as Omit<PasswordInputProps, 'label' | 'description' | 'error' | 'required'>)}
       />
     );

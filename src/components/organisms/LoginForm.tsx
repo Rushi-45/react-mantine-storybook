@@ -46,6 +46,7 @@ const LoginForm = ({ onSubmit, isLoading, error }: LoginFormProps) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          visibilityToggleButtonProps={{ 'aria-label': 'Toggle password visibility' }}
         />
         <Checkbox
           label="Remember me"
